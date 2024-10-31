@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milionerzy na projekt</title>
+    <link rel="icon" href="assets/images/weblogo.png" type="logo">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="notificationContainer" class="notification-container"></div> 
+    <div id="startModal" class="modal">
+        <div class="modal-content">
+            <h1>Witamy w grze Milionerzy</h1>
+            <h2>Gra ma 12 pytań</h2>
+            <p>
+                Sprawdź swoją wiedzę w grze Milionerzy! 
+                Odpowiedz na 12 pytań o rosnącej trudności. 
+                Masz 30 sekund na odpowiedź i możliwość skorzystania z koła ratunkowego w trudnych momentach.
+            </p>
+            <p>
+                Naciśnij przycisk "Graj", aby rozpocząć przygodę!
+            </p>
+            <button id="playButton">Graj</button>
+        </div>
+    </div>
+    <div class="logo">
+        <img src="assets/images/logo.png" alt="Logo" width="250">
+    </div>
+    <div id="timer"></div>
+    <div class="game-layout">
+        <div class="left-column">
+            <div class="lifelines">
+                <div class="lifeline-item">
+                    <span id="audiencePollStatus" class="lifeline-status">1/1</span>
+                    <button id="audience" onclick="askAudience()">📊 Pytanie do publiczności</button>
+                </div>
+                
+                <div class="lifeline-item">
+                    <span id="fiftyFiftyStatus" class="lifeline-status">1/1</span>
+                    <button id="fifty-fifty" onclick="fiftyFifty()">
+                        🌓 50/50
+                    </button>
+                </div>
+                
+                <div class="lifeline-item">
+                    <span id="switchStatus" class="lifeline-status">1/1</span>
+                    <button id="switch" onclick="changeQuestion()">🔄 Zamiana pytania</button>
+                </div>
+                
+                <div class="lifeline-item">
+                    <span id="phoneAFriendStatus" class="lifeline-status">1/1</span>
+                    <button id="phone" onclick="phoneAFriend()">📞 Telefon do przyjaciela</button>
+                </div>
+            </div>
+            
+            <div class="question-container">
+                <div class="question"></div>
+                <div class="score-number">
+                    <div class="score" id="scoreDisplay">0 zł</div>
+                    <div class="question-number"></div>
+                </div>
+                <div class="answers">
+                    <button class="answer" onclick="checkAnswer('A')">A: </button>
+                    <button class="answer" onclick="checkAnswer('B')">B: </button>
+                    <button class="answer" onclick="checkAnswer('C')">C: </button>
+                    <button class="answer" onclick="checkAnswer('D')">D: </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <div class="prize-list-container">
+                <ul class="prize-list">
+                    <li>500 zł</li>
+                    <li>1000 zł</li>
+                    <li>2000 zł</li>
+                    <li>5000 zł</li>
+                    <li>10,000 zł</li>
+                    <li>20,000 zł</li>
+                    <li>40,000 zł</li>
+                    <li>75,000 zł</li>
+                    <li>125,000 zł</li>
+                    <li>250,000 zł</li>
+                    <li>500,000 zł</li>
+                    <li>1,000,000 zł</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Confetti library script -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <!-- Your other scripts -->
+    <script src="assets/js/audio.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/lifelines.js"></script>
+    <script src="assets/js/notification.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/timer.js"></script>
+    <script src="assets/js/win.js"></script>
+    </body>
+</html>
